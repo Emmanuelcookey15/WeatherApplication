@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/weather_item"
+    android:background="@color/purple_500"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+
+
+    <TextView
+        android:id="@+id/temp_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text="Monday"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        />
+
+
+
+
+    <ImageView
+        android:id="@+id/temp_icon"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:src="@mipmap/clear"
+        />
+
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/temp_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="20"
+            android:textSize="@dimen/degree_text_size_small"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="@string/degree_symbol"
+            android:textSize="@dimen/degree_text_size_small"
+            android:layout_toEndOf="@+id/temp_value"
+            />
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

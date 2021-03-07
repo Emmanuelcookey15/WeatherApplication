@@ -39,5 +39,3 @@ interfaces contains -- ApiService which defines the retrofit method (ApiService)
 utils contains Utils.kt (contains a function that implements my approach to solving most of the algorithms used)
 
 
-
-

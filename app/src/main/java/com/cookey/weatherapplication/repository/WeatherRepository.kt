@@ -31,7 +31,6 @@ class WeatherRepository {
                                 callback.currentWeatherData(it)
                             }
 
-                            callback.loadingCurrentSuccessful("Weather data is valid")
                         }
 
                         else -> {

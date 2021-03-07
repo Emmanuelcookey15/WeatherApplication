@@ -118,9 +118,7 @@ open class MainActivity : AppCompatActivity() {
             snackBarfun(it)
         })
 
-        viewModel?.successfulCurrentData?.observe(this, Observer {
-            snackBarfun(it)
-        })
+
 
 
         viewModel?.currentWeatherData?.observe(this, Observer {
@@ -186,8 +184,6 @@ open class MainActivity : AppCompatActivity() {
 
 
     }
-
-
 
 
 

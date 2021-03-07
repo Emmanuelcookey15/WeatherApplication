@@ -49,10 +49,6 @@ class WeatherViewModel: ViewModel(), CurrentWeatherResponseInterface,
         errorCurrentData.postValue(msg)
     }
 
-    override fun loadingCurrentSuccessful(msg: String) {
-        successfulCurrentData.postValue(msg)
-    }
-
     override fun currentWeatherData(data: WeatherCurrent?) {
         currentWeatherData.postValue(data)
     }

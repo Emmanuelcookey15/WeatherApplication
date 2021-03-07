@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/temperature_value"
                 android:layout_centerHorizontal="true"
-                android:text="Loading..."
+                android:text="@string/loading"
                 android:textColor="@android:color/white"
                 android:textSize="40sp" />
 

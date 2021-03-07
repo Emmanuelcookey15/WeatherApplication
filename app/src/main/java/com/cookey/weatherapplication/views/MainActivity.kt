@@ -51,7 +51,6 @@ open class MainActivity : AppCompatActivity() {
 
     val REQUEST_CODE = 112
 
-
     // Time between location updates (5000 milliseconds or 5 seconds)
     val MIN_TIME: Long = 5000
 
@@ -69,13 +68,11 @@ open class MainActivity : AppCompatActivity() {
     lateinit var temperatureMin: TextView
     lateinit var temperatureMax: TextView
     lateinit var weatherDescription: TextView
-
     lateinit var mainActivityLayout: ScrollView
     lateinit var imageViewLayout: RelativeLayout
     lateinit var maxMinCurrentBackground : LinearLayout
 
     lateinit var recyclerView: RecyclerView
-
     var weatherAdapter: WeatherForecastAdapter? = null
 
     var mActionBar: ActionBar? = null
@@ -247,21 +244,6 @@ open class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun internetStatusNotification() {
-        snackbar =
-            Snackbar.make(view!!, "Check your internet connection.", Snackbar.LENGTH_INDEFINITE)
-        val snackBarView = snackbar!!.view
-        snackBarView.setBackgroundColor(
-            ContextCompat.getColor(this,
-            R.color.red
-        ))
-        val textView =
-            snackBarView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
-        textView.gravity = View.TEXT_ALIGNMENT_CENTER
-        textView.setTextColor(ContextCompat.getColor(this, R.color.white))
-    }
-
-
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -283,6 +265,23 @@ open class MainActivity : AppCompatActivity() {
             Snackbar.make(view!!, message, Snackbar.LENGTH_LONG).show()
         }
     }
+
+
+
+    private fun internetStatusNotification() {
+        snackbar =
+            Snackbar.make(view!!, "Check your internet connection.", Snackbar.LENGTH_INDEFINITE)
+        val snackBarView = snackbar!!.view
+        snackBarView.setBackgroundColor(
+            ContextCompat.getColor(this,
+                R.color.red
+            ))
+        val textView =
+            snackBarView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
+        textView.gravity = View.TEXT_ALIGNMENT_CENTER
+        textView.setTextColor(ContextCompat.getColor(this, R.color.white))
+    }
+
 
 
     private fun getView(): View? {

@@ -8,6 +8,7 @@ import com.cookey.weatherapplication.utils.formatTodayOfTheWeek
 import org.junit.Assert
 import org.junit.Test
 import com.cookey.weatherapplication.utils.isConnectedToTheInternet
+import com.cookey.weatherapplication.utils.updateImage
 import com.cookey.weatherapplication.utils.updateWeatherIcon
 import org.junit.Before
 
@@ -34,7 +35,7 @@ class UtilUnitTest {
     @Test
     fun `Test that the date formatted works properly` () {
 
-        Assert.assertEquals( "Monday 07:00", formatTodayOfTheWeek("2021-03-11 07:00:00"))
+        Assert.assertEquals( "Monday 07:00", formatTodayOfTheWeek("2021-03-08 07:00:00"))
 
     }
 
@@ -49,9 +50,9 @@ class UtilUnitTest {
     @Test
     fun `test Weather image is accurate` () {
 
-        Assert.assertEquals( R.drawable.sea_cloudy, updateWeatherIcon(800))
-        Assert.assertEquals( R.drawable.sea_rainy, updateWeatherIcon(100))
-        Assert.assertEquals( R.drawable.sea_sunnypng, updateWeatherIcon(904))
+        Assert.assertEquals( R.drawable.sea_cloudy, updateImage(710))
+        Assert.assertEquals( R.drawable.sea_rainy, updateImage(100))
+        Assert.assertEquals( R.drawable.sea_sunnypng, updateImage(904))
     }
 
 

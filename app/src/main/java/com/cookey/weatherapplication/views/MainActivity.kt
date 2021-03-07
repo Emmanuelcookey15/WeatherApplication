@@ -58,7 +58,7 @@ open class MainActivity : AppCompatActivity() {
     val MIN_DISTANCE = 1000f
 
     //Location
-    val LOCATION_PROVIDER = LocationManager.NETWORK_PROVIDER
+    val LOCATION_PROVIDER = LocationManager.GPS_PROVIDER
     var mLocationManager : LocationManager? = null
     var mLocationListener: LocationListener? = null
 

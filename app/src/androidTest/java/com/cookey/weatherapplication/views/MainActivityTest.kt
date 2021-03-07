@@ -43,7 +43,7 @@ class MainActivityTest : TestCase() {
 
     @Test
     fun test_that_temprature_header_display_the_text_loading_before_changing(){
-        Espresso.onView(withId(R.id.temperature_value))
+        Espresso.onView(withId(R.id.weather_description))
             .check(ViewAssertions.matches(ViewMatchers.withText(R.string.loading)))
     }
 

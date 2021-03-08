@@ -270,7 +270,6 @@ open class MainActivity : AppCompatActivity() {
             progressBar.visibility = View.VISIBLE
             recyclerView.visibility = View.GONE
 
-
         } else {
             progressBar.visibility = View.GONE
             recyclerView.visibility = View.VISIBLE

@@ -37,11 +37,16 @@ import com.cookey.weatherapplication.utils.updateColor
 import com.cookey.weatherapplication.utils.updateImage
 import com.cookey.weatherapplication.viewmodels.WeatherViewModel
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import java.security.AccessController.getContext
 
 open class MainActivity : AppCompatActivity() {
 
 
+    private lateinit var remoteConfig: FirebaseRemoteConfig
     private var viewModel: WeatherViewModel? = null
 
     internal var snackbar: Snackbar? = null
@@ -97,6 +102,17 @@ open class MainActivity : AppCompatActivity() {
         mActionBar = supportActionBar
         mActionBar?.setDisplayShowTitleEnabled(false);
         mActionBar?.setDisplayShowTitleEnabled(true);
+
+
+        // Get Remote Config instance.
+        // [START get_remote_config_instance]
+        remoteConfig = Firebase.remoteConfig
+        // [END get_remote_config_instance]
+
+        val configSettings = remoteConfigSettings {
+            minimumFetchIntervalInSeconds = 3600
+        }
+        remoteConfig.setConfigSettingsAsync(configSettings)
 
         view = getView()
         if (view != null) {
@@ -219,7 +235,6 @@ open class MainActivity : AppCompatActivity() {
                 Log.d("TELLUS", "longitude: $longitude")
                 Log.d("TELLUS", "latitude: $latitude")
 
-                progressDialog(true)
                 viewModel?.postCurrentWeatherData(latitude, longitude)
                 viewModel?.postForecastWeatherData(latitude, longitude)
             }

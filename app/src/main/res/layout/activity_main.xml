@@ -203,7 +203,7 @@
             <include
                 android:id="@+id/progress_bar"
                 layout="@layout/progress_dialog"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"

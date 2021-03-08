@@ -48,11 +48,14 @@ class UtilUnitTest {
     }
 
     @Test
-    fun `test Weather image is accurate` () {
+    fun `test Weather image is accurate when the temperature is loaded though` () {
 
         Assert.assertEquals( R.drawable.sea_cloudy, updateImage(710))
         Assert.assertEquals( R.drawable.sea_rainy, updateImage(100))
         Assert.assertEquals( R.drawable.sea_sunnypng, updateImage(904))
+        Assert.assertEquals( R.drawable.forest_cloudy, updateImage(640))
+        Assert.assertEquals( R.drawable.forest_rainy, updateImage(560))
+        Assert.assertEquals( R.drawable.forest_sunny, updateImage(800))
     }
 
 

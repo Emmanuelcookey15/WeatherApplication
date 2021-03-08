@@ -63,6 +63,7 @@ open class MainActivity : AppCompatActivity() {
     var mLocationListener: LocationListener? = null
 
 
+    lateinit var progressBar: LinearLayout
     lateinit var temperatureValue: TextView
     lateinit var temperatureCurrent: TextView
     lateinit var temperatureMin: TextView
@@ -71,8 +72,8 @@ open class MainActivity : AppCompatActivity() {
     lateinit var mainActivityLayout: ScrollView
     lateinit var imageViewLayout: RelativeLayout
     lateinit var maxMinCurrentBackground : LinearLayout
-
     lateinit var recyclerView: RecyclerView
+
     var weatherAdapter: WeatherForecastAdapter? = null
 
     var mActionBar: ActionBar? = null
@@ -81,6 +82,7 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        progressBar = findViewById(R.id.progress_bar)
         temperatureValue = findViewById(R.id.temperature_value)
         temperatureCurrent = findViewById(R.id.temperature_current)
         temperatureMin = findViewById(R.id.temperature_min)
@@ -167,10 +169,12 @@ open class MainActivity : AppCompatActivity() {
         recyclerView.adapter = weatherAdapter
 
         viewModel?.errorForecastData?.observe(this, Observer {
+            progressDialog(false)
             snackBarfun(it)
         })
 
         viewModel?.successfulForecastData?.observe(this, Observer {
+            progressDialog(false)
             snackBarfun(it)
         })
 
@@ -182,6 +186,19 @@ open class MainActivity : AppCompatActivity() {
 
     }
 
+
+    fun progressDialog(bol: Boolean) {
+        if (bol) {
+            progressBar.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
+
+
+        } else {
+            progressBar.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+
+        }
+    }
 
 
     override fun onResume() {
@@ -215,6 +232,7 @@ open class MainActivity : AppCompatActivity() {
                 Log.d("TELLUS", "longitude: $longitude")
                 Log.d("TELLUS", "latitude: $latitude")
 
+                progressDialog(true)
                 viewModel?.postCurrentWeatherData(latitude, longitude)
                 viewModel?.postForecastWeatherData(latitude, longitude)
             }

@@ -234,7 +234,7 @@ open class MainActivity : AppCompatActivity() {
 
                 Log.d("TELLUS", "longitude: $longitude")
                 Log.d("TELLUS", "latitude: $latitude")
-                
+
                 progressDialog(true)
                 viewModel?.postCurrentWeatherData(latitude, longitude)
                 viewModel?.postForecastWeatherData(latitude, longitude)

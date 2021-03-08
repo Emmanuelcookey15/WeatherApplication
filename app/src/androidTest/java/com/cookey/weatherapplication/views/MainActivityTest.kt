@@ -47,11 +47,6 @@ class MainActivityTest : TestCase() {
             .check(ViewAssertions.matches(ViewMatchers.withText(R.string.loading)))
     }
 
-    @Test
-    fun test_to_progress_bar_dialog_is_displayed_on_launch(){
-        Espresso.onView(withId(R.id.progress_bar))
-            .check(ViewAssertions.matches(ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
-    }
 
     @Test
     fun test_to_recycler_view_dialog_is_not_displayed_on_launch(){

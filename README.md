@@ -14,6 +14,7 @@ Libraries: Third party dependecies are used in this project: Retrofit library fo
 Android app which make use of OpenWeatherMap API to get weather details and display the information accordingly.
 
   - https://openweathermap.org/current
+  
   - https://openweathermap.org/forecast5
 
 Well tested Unit and UI tests with JUnit and Expresso
@@ -22,8 +23,10 @@ Well tested Unit and UI tests with JUnit and Expresso
 ## Coding / Design
 Design pattern used - MVVM (Model-View-ViewModel), Retrofit2, ViewModel, Repository pattern, and Android Recommended App Architecture
 
-Integration into a CI/CD build pipeline - I used Bitrise and Semaphone
-Code coverage integration -- Bitrise
+Integration into a CI/CD build pipeline: Bitrise and Semaphone
+
+Code coverage integration: Bitrise
+
 Static code analysis -- lint
 
 

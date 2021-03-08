@@ -187,19 +187,6 @@ open class MainActivity : AppCompatActivity() {
     }
 
 
-    fun progressDialog(bol: Boolean) {
-        if (bol) {
-            progressBar.visibility = View.VISIBLE
-            recyclerView.visibility = View.GONE
-
-
-        } else {
-            progressBar.visibility = View.GONE
-            recyclerView.visibility = View.VISIBLE
-
-        }
-    }
-
 
     override fun onResume() {
         super.onResume()
@@ -274,6 +261,20 @@ open class MainActivity : AppCompatActivity() {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getWeatherForCurrentLocation()
             }
+        }
+    }
+
+
+    fun progressDialog(bol: Boolean) {
+        if (bol) {
+            progressBar.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
+
+
+        } else {
+            progressBar.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+
         }
     }
 

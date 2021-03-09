@@ -262,7 +262,7 @@ open class MainActivity : AppCompatActivity() {
         )
     }
 
-    open fun statusCheck() {
+    private fun statusCheck() {
         val manager =
             getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {

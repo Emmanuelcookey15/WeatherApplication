@@ -205,6 +205,7 @@ open class MainActivity : AppCompatActivity() {
         super.onResume()
         registerInternetCheckReceiver()
         isOn = true
+        statusCheck()
         getWeatherForCurrentLocation()
     }
 
@@ -253,7 +254,6 @@ open class MainActivity : AppCompatActivity() {
 
             ActivityCompat.requestPermissions(this,
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_CODE)
-            statusCheck()
 
             return
         }

@@ -205,7 +205,7 @@ open class MainActivity : AppCompatActivity() {
         super.onResume()
         registerInternetCheckReceiver()
         isOn = true
-//        statusCheck()
+        statusCheck()
         getWeatherForCurrentLocation()
     }
 

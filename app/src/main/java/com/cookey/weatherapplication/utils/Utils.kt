@@ -22,11 +22,11 @@ fun Context.isConnectedToTheInternet(): Boolean {
 
 
 @RequiresApi(Build.VERSION_CODES.O)
-fun formatTodayOfTheWeek(value: String): String{
+fun formatTodayOfTheWeek(value: String): String? {
     val inputFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
     val outputFormat: DateFormat = SimpleDateFormat("EEEE HH:mm")
     val date: Date? = inputFormat.parse(value)
-    val outputDateStr: String = outputFormat.format(date)
+    val outputDateStr: String? = outputFormat.format(date!!)
     return  outputDateStr
 
 }

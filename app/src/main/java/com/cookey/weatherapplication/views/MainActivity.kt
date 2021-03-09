@@ -275,9 +275,9 @@ open class MainActivity : AppCompatActivity() {
         builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
             .setCancelable(false)
             .setPositiveButton("Yes"
-            ) { dialog, id -> startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)) }
+            ) { _, _ -> startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)) }
             .setNegativeButton("No"
-            ) { dialog, id -> dialog.cancel() }
+            ) { dialog, _ -> dialog.cancel() }
         val alert: AlertDialog = builder.create()
         alert.show()
     }

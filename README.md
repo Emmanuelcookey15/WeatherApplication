@@ -14,7 +14,7 @@ Libraries: Third party dependecies are used in this project: Retrofit library fo
 Android app which make use of OpenWeatherMap API to get weather details and display the information accordingly.
 
   - https://openweathermap.org/current
-  
+
   - https://openweathermap.org/forecast5
 
 Well tested Unit and UI tests with JUnit and Expresso
